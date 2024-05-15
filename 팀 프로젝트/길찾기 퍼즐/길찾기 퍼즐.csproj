@@ -52,6 +52,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="PicInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -94,6 +95,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\오른쪽 화살표.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Tile_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Tile_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Tile_10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Tile_11.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
