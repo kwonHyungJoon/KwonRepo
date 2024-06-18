@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlTypes;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -65,13 +66,17 @@ namespace 길찾기_퍼즐
                 //다시 그리기
 
                 // 회전 로그 추가
-                lvwTurnLog.Items.Add($"{info.Index / GridSize +1} 행, {info.Index % GridSize} 열에 해당하는 타일이 회전했습니다.");
+                lbTurnLog.Items.Add($"{info.Index / GridSize +1} 행, {info.Index % GridSize} 열에 해당하는 타일이 회전했습니다.");
+                // 리스트박스의 화면이 맨 아래를 보이도록 조정
+                lbTurnLog.SelectedIndex = lbTurnLog.Items.Count - 1;
+
             }
         }
 
         private void Unpassable_Message()
         {
-            lvwTurnLog.Items.Add($"해당 방향으로는 못 움직입니다.");
+            lbTurnLog.Items.Add($"해당 방향으로는 못 움직입니다.");
+            lbTurnLog.SelectedIndex = lbTurnLog.Items.Count - 1;
         }
 
         private bool IsPassable_Up()
@@ -181,7 +186,8 @@ namespace 길찾기_퍼즐
             TurnExistence(catIndex);
             TurnExistence(catIndex - GridSize);
 
-            lvwTurnLog.Items.Add($"{catIndex / GridSize + 1} 행, {catIndex % GridSize} 열에 있던 캣이 {catIndex / GridSize} 행, {catIndex % GridSize} 열로 이동합니다.");
+            lbTurnLog.Items.Add($"{catIndex / GridSize + 1} 행, {catIndex % GridSize} 열에 있던 캣이 {catIndex / GridSize} 행, {catIndex % GridSize} 열로 이동합니다.");
+            lbTurnLog.SelectedIndex = lbTurnLog.Items.Count - 1;
             catIndex = catIndex - GridSize;
             
         }
@@ -196,7 +202,8 @@ namespace 길찾기_퍼즐
             TurnExistence(catIndex);
             TurnExistence(catIndex - 1);
 
-            lvwTurnLog.Items.Add($"{catIndex / GridSize + 1} 행, {catIndex % GridSize} 열에 있던 캣이 {catIndex / GridSize + 1} 행, {catIndex % GridSize -1} 열로 이동합니다.");
+            lbTurnLog.Items.Add($"{catIndex / GridSize + 1} 행, {catIndex % GridSize} 열에 있던 캣이 {catIndex / GridSize + 1} 행, {catIndex % GridSize -1} 열로 이동합니다.");
+            lbTurnLog.SelectedIndex = lbTurnLog.Items.Count - 1;
             catIndex = catIndex - 1;
         }
 
@@ -210,7 +217,8 @@ namespace 길찾기_퍼즐
             TurnExistence(catIndex);
             TurnExistence(catIndex + 1);
 
-            lvwTurnLog.Items.Add($"{catIndex / GridSize + 1} 행, {catIndex % GridSize} 열에 있던 캣이 {catIndex / GridSize + 1} 행, {catIndex % GridSize + 1} 열로 이동합니다.");
+            lbTurnLog.Items.Add($"{catIndex / GridSize + 1} 행, {catIndex % GridSize} 열에 있던 캣이 {catIndex / GridSize + 1} 행, {catIndex % GridSize + 1} 열로 이동합니다.");
+            lbTurnLog.SelectedIndex = lbTurnLog.Items.Count - 1;
             catIndex = catIndex + 1;
         }
 
@@ -224,8 +232,29 @@ namespace 길찾기_퍼즐
             TurnExistence(catIndex);
             TurnExistence(catIndex + GridSize);
 
-            lvwTurnLog.Items.Add($"{catIndex / GridSize + 1} 행, {catIndex % GridSize} 열에 있던 캣이 {catIndex / GridSize + 2} 행, {catIndex % GridSize} 열로 이동합니다.");
+            lbTurnLog.Items.Add($"{catIndex / GridSize + 1} 행, {catIndex % GridSize} 열에 있던 캣이 {catIndex / GridSize + 2} 행, {catIndex % GridSize} 열로 이동합니다.");
+            lbTurnLog.SelectedIndex = lbTurnLog.Items.Count - 1;
             catIndex = catIndex + GridSize;
+        }
+
+        private void 저장ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string textfile = @"c:\Users\kwonh\Desktop\MyTest.txt";
+
+            // 파일이 존재하지 않으면
+            if (!File.Exists(textfile))
+            {
+                using (StreamWriter sw = File.CreateText(textfile))
+                {
+                    for (int i = 1; i <= 25; i++)
+                    {
+                        var pictureBox = (PictureBox)this.Controls.Find("pictureBox" + i, true).FirstOrDefault();
+                        PictureBoxInfo info = (PictureBoxInfo)pictureBox.Tag;
+                    sw.WriteLine(info.TileType);
+                    }
+                    sw.WriteLine(catIndex);
+                }
+            }
         }
     }
 }
