@@ -108,5 +108,29 @@
   <ItemGroup>
     <None Include="Properties\Tile_11.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="newtile\tile_l.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="newtile\tileredcat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="newtile\tile_-.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="newtile\tileredcat_l.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="newtile\tile_j.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="newtile\tile_t.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="newtile\tilereduni.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="newtile\tilereduni_l.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

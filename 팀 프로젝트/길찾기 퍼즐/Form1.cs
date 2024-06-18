@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlTypes;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -44,19 +45,27 @@ namespace 길찾기_퍼즐
                 {
                     case 0: //세로로 일자 타일이면
                         info.TileType = 1;
-                        clickedPictureBox.Image = Properties.Resources.Tile_1;
+                        clickedPictureBox.Image = Properties.Resources.tile__;
                         break;
                     case 1:  //가로로 일자 타일이면
                         info.TileType = 0;
-                        clickedPictureBox.Image = Properties.Resources.Tile_0;
+                        clickedPictureBox.Image = Properties.Resources.tile_l;
+                        break;
+                    case 8: //우니 있는 가로 일자 타일이면
+                        info.TileType = 9;
+                        clickedPictureBox.Image = Properties.Resources.tilereduni_l;
+                        break;
+                    case 9: //우니 있는 세로 일자 타일이면
+                        info.TileType = 8;
+                        clickedPictureBox.Image = Properties.Resources.tilereduni;
                         break;
                     case 10: //캣 있는 세로 일자 타일이면
                         info.TileType = 11;
-                        clickedPictureBox.Image = Properties.Resources.Tile_11;
+                        clickedPictureBox.Image = Properties.Resources.tileredcat;
                         break;
                     case 11:  //캣 있는 가로 일자 타일이면
                         info.TileType = 10;
-                        clickedPictureBox.Image = Properties.Resources.Tile_10;
+                        clickedPictureBox.Image = Properties.Resources.tileredcat_l;
                         break;
                     default:
                         break;
@@ -134,6 +143,16 @@ namespace 길찾기_퍼즐
             return true;
         }
 
+        private bool IsEscape()
+        {
+            if (catIndex == 5)
+            {
+                return true;
+            }
+            else
+                return false;
+        }
+
         private PictureBox Address_Of_Box(int aim)
         {
          
@@ -150,19 +169,27 @@ namespace 길찾기_퍼즐
             {
                 case 0:
                     info.TileType = 10;
-                    Address_Of_Box(aim).Image = Properties.Resources.Tile_10;
+                    Address_Of_Box(aim).Image = Properties.Resources.tileredcat_l;
                     break;
                 case 1:
                     info.TileType = 11;
-                    Address_Of_Box(aim).Image = Properties.Resources.Tile_11;
+                    Address_Of_Box(aim).Image = Properties.Resources.tileredcat;
+                    break;
+                case 8:
+                    info.TileType = 9;
+                    Address_Of_Box(aim).Image = Properties.Resources.tilereduni_l;
+                    break;
+                case 9:
+                    info.TileType = 8;
+                    Address_Of_Box(aim).Image = Properties.Resources.tilereduni;
                     break;
                 case 10:
                     info.TileType = 0;
-                    Address_Of_Box(aim).Image = Properties.Resources.Tile_0;
+                    Address_Of_Box(aim).Image = Properties.Resources.tile_l;
                     break;
                 case 11:
                     info.TileType = 1;
-                    Address_Of_Box(aim).Image = Properties.Resources.Tile_1;
+                    Address_Of_Box(aim).Image = Properties.Resources.tile__;
                     break;
                 default:
                     break;
@@ -183,7 +210,11 @@ namespace 길찾기_퍼즐
 
             lvwTurnLog.Items.Add($"{catIndex / GridSize + 1} 행, {catIndex % GridSize} 열에 있던 캣이 {catIndex / GridSize} 행, {catIndex % GridSize} 열로 이동합니다.");
             catIndex = catIndex - GridSize;
-            
+
+            if (IsEscape())
+            {
+                lvwTurnLog.Items.Add("캣이 탈출했습니다!");
+            }
         }
 
         private void btnLeft_Click(object sender, EventArgs e)
@@ -212,6 +243,11 @@ namespace 길찾기_퍼즐
 
             lvwTurnLog.Items.Add($"{catIndex / GridSize + 1} 행, {catIndex % GridSize} 열에 있던 캣이 {catIndex / GridSize + 1} 행, {catIndex % GridSize + 1} 열로 이동합니다.");
             catIndex = catIndex + 1;
+
+            if (IsEscape())
+            {
+                lvwTurnLog.Items.Add("캣이 탈출했습니다!");
+            }
         }
 
         private void btnDown_Click(object sender, EventArgs e)

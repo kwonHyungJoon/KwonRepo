@@ -8,3 +8,14 @@ C:\Users\kwonh\Desktop\KwonRepo\팀 프로젝트\길찾기 퍼즐\obj\Debug\길�
 C:\Users\kwonh\Desktop\KwonRepo\팀 프로젝트\길찾기 퍼즐\obj\Debug\길찾기 퍼즐.csproj.CoreCompileInputs.cache
 C:\Users\kwonh\Desktop\KwonRepo\팀 프로젝트\길찾기 퍼즐\obj\Debug\길찾기 퍼즐.exe
 C:\Users\kwonh\Desktop\KwonRepo\팀 프로젝트\길찾기 퍼즐\obj\Debug\길찾기 퍼즐.pdb
+C:\Users\mina1\Maze Puzzle\팀 프로젝트\길찾기 퍼즐\bin\Debug\길찾기 퍼즐.exe.config
+C:\Users\mina1\Maze Puzzle\팀 프로젝트\길찾기 퍼즐\bin\Debug\길찾기 퍼즐.exe
+C:\Users\mina1\Maze Puzzle\팀 프로젝트\길찾기 퍼즐\bin\Debug\길찾기 퍼즐.pdb
+C:\Users\mina1\Maze Puzzle\팀 프로젝트\길찾기 퍼즐\obj\Debug\길찾기 퍼즐.csproj.AssemblyReference.cache
+C:\Users\mina1\Maze Puzzle\팀 프로젝트\길찾기 퍼즐\obj\Debug\길찾기 퍼즐.csproj.SuggestedBindingRedirects.cache
+C:\Users\mina1\Maze Puzzle\팀 프로젝트\길찾기 퍼즐\obj\Debug\길찾기_퍼즐.Form1.resources
+C:\Users\mina1\Maze Puzzle\팀 프로젝트\길찾기 퍼즐\obj\Debug\길찾기_퍼즐.Properties.Resources.resources
+C:\Users\mina1\Maze Puzzle\팀 프로젝트\길찾기 퍼즐\obj\Debug\길찾기 퍼즐.csproj.GenerateResource.cache
+C:\Users\mina1\Maze Puzzle\팀 프로젝트\길찾기 퍼즐\obj\Debug\길찾기 퍼즐.csproj.CoreCompileInputs.cache
+C:\Users\mina1\Maze Puzzle\팀 프로젝트\길찾기 퍼즐\obj\Debug\길찾기 퍼즐.exe
+C:\Users\mina1\Maze Puzzle\팀 프로젝트\길찾기 퍼즐\obj\Debug\길찾기 퍼즐.pdb
