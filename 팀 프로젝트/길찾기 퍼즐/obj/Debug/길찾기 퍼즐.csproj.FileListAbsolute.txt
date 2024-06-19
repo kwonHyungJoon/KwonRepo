@@ -8,13 +8,3 @@ C:\Users\kwonh\Desktop\KwonRepo\팀 프로젝트\길찾기 퍼즐\obj\Debug\길�
 C:\Users\kwonh\Desktop\KwonRepo\팀 프로젝트\길찾기 퍼즐\obj\Debug\길찾기 퍼즐.csproj.CoreCompileInputs.cache
 C:\Users\kwonh\Desktop\KwonRepo\팀 프로젝트\길찾기 퍼즐\obj\Debug\길찾기 퍼즐.exe
 C:\Users\kwonh\Desktop\KwonRepo\팀 프로젝트\길찾기 퍼즐\obj\Debug\길찾기 퍼즐.pdb
-C:\Users\jhkoo\Desktop\2024 2학년 1학기\응용소프트웨어실습\팀플\팀 프로젝트\길찾기 퍼즐\obj\Debug\길찾기 퍼즐.csproj.AssemblyReference.cache
-C:\Users\jhkoo\Desktop\2024 2학년 1학기\응용소프트웨어실습\팀플\팀 프로젝트\길찾기 퍼즐\obj\Debug\길찾기 퍼즐.exe
-C:\Users\jhkoo\Desktop\2024 2학년 1학기\응용소프트웨어실습\팀플\팀 프로젝트\길찾기 퍼즐\obj\Debug\길찾기 퍼즐.pdb
-C:\Users\jhkoo\Desktop\2024 2학년 1학기\응용소프트웨어실습\팀플\팀 프로젝트\길찾기 퍼즐\bin\Debug\길찾기 퍼즐.exe.config
-C:\Users\jhkoo\Desktop\2024 2학년 1학기\응용소프트웨어실습\팀플\팀 프로젝트\길찾기 퍼즐\bin\Debug\길찾기 퍼즐.exe
-C:\Users\jhkoo\Desktop\2024 2학년 1학기\응용소프트웨어실습\팀플\팀 프로젝트\길찾기 퍼즐\bin\Debug\길찾기 퍼즐.pdb
-C:\Users\jhkoo\Desktop\2024 2학년 1학기\응용소프트웨어실습\팀플\팀 프로젝트\길찾기 퍼즐\obj\Debug\길찾기_퍼즐.Form1.resources
-C:\Users\jhkoo\Desktop\2024 2학년 1학기\응용소프트웨어실습\팀플\팀 프로젝트\길찾기 퍼즐\obj\Debug\길찾기_퍼즐.Properties.Resources.resources
-C:\Users\jhkoo\Desktop\2024 2학년 1학기\응용소프트웨어실습\팀플\팀 프로젝트\길찾기 퍼즐\obj\Debug\길찾기 퍼즐.csproj.GenerateResource.cache
-C:\Users\jhkoo\Desktop\2024 2학년 1학기\응용소프트웨어실습\팀플\팀 프로젝트\길찾기 퍼즐\obj\Debug\길찾기 퍼즐.csproj.CoreCompileInputs.cache
