@@ -108,5 +108,17 @@
   <ItemGroup>
     <None Include="Properties\Tile_11.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="nTile_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="nTile_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="nTile_10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="nTile_11.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

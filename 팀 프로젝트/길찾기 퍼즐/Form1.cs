@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +17,7 @@ namespace 길찾기_퍼즐
     {
         private const int GridSize = 5;
         private int catIndex = 21;
+        private bool endValue = false;
         //왼쪽 아래에서 시작
         public Form1()
         {
@@ -28,6 +30,11 @@ namespace 길찾기_퍼즐
             for (int i = 1; i <= 25; i++)
             {
                 var pictureBox = (PictureBox)this.Controls.Find("pictureBox" + i, true).FirstOrDefault();
+                if (i == 5) // 도착지의 타일타입은 -1
+                {
+                    pictureBox.Tag = new PictureBoxInfo(i, -1);
+                    continue;
+                }
                 pictureBox.Tag = new PictureBoxInfo(i, i == 21 ? 10 : 0);
             }
 
@@ -39,25 +46,31 @@ namespace 길찾기_퍼즐
         {
             PictureBox clickedPictureBox = sender as PictureBox;
             PictureBoxInfo info = (PictureBoxInfo)clickedPictureBox.Tag;
+            if(info.Index == 5)
+            {
+                lbTurnLog.Items.Add($"회전이 불가능한 타일입니다.");
+                lbTurnLog.SelectedIndex = lbTurnLog.Items.Count - 1;
+                return;
+            }
             if (clickedPictureBox != null)
             {
                 switch (info.TileType)
                 {
                     case 0: //세로로 일자 타일이면
                         info.TileType = 1;
-                        clickedPictureBox.Image = Properties.Resources.Tile_1;
+                        clickedPictureBox.Image = Properties.Resources.nTile_1;
                         break;
                     case 1:  //가로로 일자 타일이면
                         info.TileType = 0;
-                        clickedPictureBox.Image = Properties.Resources.Tile_0;
+                        clickedPictureBox.Image = Properties.Resources.nTile_0;
                         break;
                     case 10: //캣 있는 세로 일자 타일이면
                         info.TileType = 11;
-                        clickedPictureBox.Image = Properties.Resources.Tile_11;
+                        clickedPictureBox.Image = Properties.Resources.nTile_11;
                         break;
                     case 11:  //캣 있는 가로 일자 타일이면
                         info.TileType = 10;
-                        clickedPictureBox.Image = Properties.Resources.Tile_10;
+                        clickedPictureBox.Image = Properties.Resources.nTile_10;
                         break;
                     default:
                         break;
@@ -89,6 +102,12 @@ namespace 길찾기_퍼즐
 
             if(now.TileType % 10 == 1) // 캣이 가로타일에 있나
                 return false;
+            if (next.TileType < 0) // 도착지가 x타일
+            {
+                Address_Of_Box(catIndex).Image = Properties.Resources.nTile_0;
+                playEnding();
+                return true;
+            }
             if (next.TileType % 10 == 1) // 도착지가 가로타일인가
                 return false;
             return true;
@@ -119,7 +138,13 @@ namespace 길찾기_퍼즐
 
             if (now.TileType % 10 == 0) // 캣이 세로타일에 있나
                 return false;
-            if (next.TileType % 10 == 0) // 도착지가 세로타일인가
+            if (next.TileType < 0) // 도착지가 x타일
+            {
+                Address_Of_Box(catIndex).Image = Properties.Resources.nTile_1;
+                playEnding();
+                return true;
+            }
+                if (next.TileType % 10 == 0) // 도착지가 세로타일인가
                 return false;
             return true;
         }
@@ -155,19 +180,19 @@ namespace 길찾기_퍼즐
             {
                 case 0:
                     info.TileType = 10;
-                    Address_Of_Box(aim).Image = Properties.Resources.Tile_10;
+                    Address_Of_Box(aim).Image = Properties.Resources.nTile_10;
                     break;
                 case 1:
                     info.TileType = 11;
-                    Address_Of_Box(aim).Image = Properties.Resources.Tile_11;
+                    Address_Of_Box(aim).Image = Properties.Resources.nTile_11;
                     break;
                 case 10:
                     info.TileType = 0;
-                    Address_Of_Box(aim).Image = Properties.Resources.Tile_0;
+                    Address_Of_Box(aim).Image = Properties.Resources.nTile_0;
                     break;
                 case 11:
                     info.TileType = 1;
-                    Address_Of_Box(aim).Image = Properties.Resources.Tile_1;
+                    Address_Of_Box(aim).Image = Properties.Resources.nTile_1;
                     break;
                 default:
                     break;
@@ -183,10 +208,12 @@ namespace 길찾기_퍼즐
                 Unpassable_Message();
                 return;
             }
+            if (endValue == true)
+                return;
             TurnExistence(catIndex);
             TurnExistence(catIndex - GridSize);
 
-            lbTurnLog.Items.Add($"{catIndex / GridSize + 1} 행, {catIndex % GridSize} 열에 있던 캣이 {catIndex / GridSize} 행, {catIndex % GridSize} 열로 이동합니다.");
+            lbTurnLog.Items.Add($"{catIndex / GridSize + 1} 행, {catIndex % GridSize} 열에 있던 우니가 {catIndex / GridSize} 행, {catIndex % GridSize} 열로 이동합니다.");
             lbTurnLog.SelectedIndex = lbTurnLog.Items.Count - 1;
             catIndex = catIndex - GridSize;
             
@@ -202,7 +229,7 @@ namespace 길찾기_퍼즐
             TurnExistence(catIndex);
             TurnExistence(catIndex - 1);
 
-            lbTurnLog.Items.Add($"{catIndex / GridSize + 1} 행, {catIndex % GridSize} 열에 있던 캣이 {catIndex / GridSize + 1} 행, {catIndex % GridSize -1} 열로 이동합니다.");
+            lbTurnLog.Items.Add($"{catIndex / GridSize + 1} 행, {catIndex % GridSize} 열에 있던 우니가 {catIndex / GridSize + 1} 행, {catIndex % GridSize -1} 열로 이동합니다.");
             lbTurnLog.SelectedIndex = lbTurnLog.Items.Count - 1;
             catIndex = catIndex - 1;
         }
@@ -214,10 +241,12 @@ namespace 길찾기_퍼즐
                 Unpassable_Message();
                 return;
             }
+            if (endValue == true)
+                return;
             TurnExistence(catIndex);
             TurnExistence(catIndex + 1);
 
-            lbTurnLog.Items.Add($"{catIndex / GridSize + 1} 행, {catIndex % GridSize} 열에 있던 캣이 {catIndex / GridSize + 1} 행, {catIndex % GridSize + 1} 열로 이동합니다.");
+            lbTurnLog.Items.Add($"{catIndex / GridSize + 1} 행, {catIndex % GridSize} 열에 있던 우니가 {catIndex / GridSize + 1} 행, {catIndex % GridSize + 1} 열로 이동합니다.");
             lbTurnLog.SelectedIndex = lbTurnLog.Items.Count - 1;
             catIndex = catIndex + 1;
         }
@@ -232,14 +261,15 @@ namespace 길찾기_퍼즐
             TurnExistence(catIndex);
             TurnExistence(catIndex + GridSize);
 
-            lbTurnLog.Items.Add($"{catIndex / GridSize + 1} 행, {catIndex % GridSize} 열에 있던 캣이 {catIndex / GridSize + 2} 행, {catIndex % GridSize} 열로 이동합니다.");
+            lbTurnLog.Items.Add($"{catIndex / GridSize + 1} 행, {catIndex % GridSize} 열에 있던 우니가 {catIndex / GridSize + 2} 행, {catIndex % GridSize} 열로 이동합니다.");
             lbTurnLog.SelectedIndex = lbTurnLog.Items.Count - 1;
             catIndex = catIndex + GridSize;
         }
 
         private void 저장ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string textfile = @"c:\Users\kwonh\Desktop\MyTest.txt";
+            // 저장된 파일은 길찾기퍼즐 파일 안에 저장됨.
+            string textfile = @"../../MyTest.txt"; 
 
             // 파일이 존재하지 않으면
             if (!File.Exists(textfile))
@@ -254,6 +284,70 @@ namespace 길찾기_퍼즐
                     }
                     sw.WriteLine(catIndex);
                 }
+                MessageBox.Show("저장 완료");
+            }
+            else
+            {
+                MessageBox.Show("기존에 저장된 파일이 존재합니다.");
+            }
+        }
+
+        private void playEnding()
+        {
+            lbTurnLog.Items.Add($"우니가 목적지에 도착했습니다!");
+            lbTurnLog.SelectedIndex = lbTurnLog.Items.Count - 1;
+            MessageBox.Show("우니가 목적지에 도착했습니다!");
+            endValue = true;
+        }
+
+        private void 불러오기ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string textfile = @"../../MyTest.txt";
+            string line;
+            int i = 1;
+            if (File.Exists(textfile))
+            {
+                using (StreamReader sr = new StreamReader(textfile))
+                {
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        if (i == 26)
+                        {
+                            catIndex = int.Parse(line);
+                            break;
+                        }
+
+                        var pictureBox = (PictureBox)this.Controls.Find("pictureBox" + i, true).FirstOrDefault();
+                        pictureBox.Tag = new PictureBoxInfo(i, int.Parse(line));
+                        PictureBoxInfo info = (PictureBoxInfo)Address_Of_Box(i).Tag;
+
+                        // 갱신된 타일타입에 맞춰 이미지 변경
+                        switch (info.TileType)
+                        {
+                            case 0:
+                                pictureBox.Image = Properties.Resources.nTile_0;
+                                break;
+                            case 1:
+                                pictureBox.Image = Properties.Resources.nTile_1;
+                                break;
+                            case 10:
+                                pictureBox.Image = Properties.Resources.nTile_10;
+                                break;
+                            case 11:
+                                pictureBox.Image = Properties.Resources.nTile_11;
+                                break;
+                            default:
+                                break;
+                        }
+
+                        i++;
+                    }
+                }
+                MessageBox.Show("불러오기 완료");
+            }
+            else
+            {
+                MessageBox.Show("저장된 파일이 없습니다");
             }
         }
     }
