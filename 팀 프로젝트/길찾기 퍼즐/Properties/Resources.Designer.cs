@@ -83,9 +83,9 @@ namespace 길찾기_퍼즐.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap Tile_10 {
+        internal static System.Drawing.Bitmap Tile_2 {
             get {
-                object obj = ResourceManager.GetObject("Tile_10", resourceCulture);
+                object obj = ResourceManager.GetObject("Tile_2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,149 @@ namespace 길찾기_퍼즐.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap Tile_11 {
+        internal static System.Drawing.Bitmap Tile_3 {
             get {
-                object obj = ResourceManager.GetObject("Tile_11", resourceCulture);
+                object obj = ResourceManager.GetObject("Tile_3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap Tile_4 {
+            get {
+                object obj = ResourceManager.GetObject("Tile_4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap Tile_5 {
+            get {
+                object obj = ResourceManager.GetObject("Tile_5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap Tile_Token_0 {
+            get {
+                object obj = ResourceManager.GetObject("Tile_Token_0", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap Tile_Token_1 {
+            get {
+                object obj = ResourceManager.GetObject("Tile_Token_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap Tile_Token_2 {
+            get {
+                object obj = ResourceManager.GetObject("Tile_Token_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap Tile_Token_31 {
+            get {
+                object obj = ResourceManager.GetObject("Tile_Token_31", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap Tile_Token_32 {
+            get {
+                object obj = ResourceManager.GetObject("Tile_Token_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap Tile_Token_33 {
+            get {
+                object obj = ResourceManager.GetObject("Tile_Token_33", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap Tile_Token_34 {
+            get {
+                object obj = ResourceManager.GetObject("Tile_Token_34", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap Tile_Token_41 {
+            get {
+                object obj = ResourceManager.GetObject("Tile_Token_41", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap Tile_Token_42 {
+            get {
+                object obj = ResourceManager.GetObject("Tile_Token_42", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap Tile_Token_43 {
+            get {
+                object obj = ResourceManager.GetObject("Tile_Token_43", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap Tile_Token_44 {
+            get {
+                object obj = ResourceManager.GetObject("Tile_Token_44", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap Tile_Token_5 {
+            get {
+                object obj = ResourceManager.GetObject("Tile_Token_5", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -115,7 +255,7 @@ namespace 길찾기_퍼즐.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap 아래_화살표 {
             get {
-                object obj = ResourceManager.GetObject("아래 화살표", resourceCulture);
+                object obj = ResourceManager.GetObject("아래_화살표", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -125,7 +265,7 @@ namespace 길찾기_퍼즐.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap 오른쪽_화살표 {
             get {
-                object obj = ResourceManager.GetObject("오른쪽 화살표", resourceCulture);
+                object obj = ResourceManager.GetObject("오른쪽_화살표", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -135,7 +275,7 @@ namespace 길찾기_퍼즐.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap 왼쪽_화살표 {
             get {
-                object obj = ResourceManager.GetObject("왼쪽 화살표", resourceCulture);
+                object obj = ResourceManager.GetObject("왼쪽_화살표", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -145,7 +285,7 @@ namespace 길찾기_퍼즐.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap 위쪽_화살표 {
             get {
-                object obj = ResourceManager.GetObject("위쪽 화살표", resourceCulture);
+                object obj = ResourceManager.GetObject("위쪽_화살표", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
