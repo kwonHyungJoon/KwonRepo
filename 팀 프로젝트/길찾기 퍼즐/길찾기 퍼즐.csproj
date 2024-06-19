@@ -60,18 +60,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -85,28 +85,70 @@
     <None Include="Properties\X.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Properties\위쪽 화살표.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Properties\왼쪽 화살표.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Properties\아래 화살표.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Properties\오른쪽 화살표.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Properties\Tile_0.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\Tile_1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Properties\Tile_10.png" />
+    <None Include="Properties\Tile_Token_42.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Properties\Tile_11.png" />
+    <None Include="Properties\Tile_Token_43.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Tile_Token_44.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Tile_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Tile_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Tile_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Tile_Token_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Tile_Token_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Tile_Token_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Tile_Token_31.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Tile_Token_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Tile_Token_33.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Tile_Token_34.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Tile_Token_41.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\아래_화살표.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\오른쪽_화살표.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\왼쪽_화살표.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\위쪽_화살표.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Tile_5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Tile_Token_5.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
